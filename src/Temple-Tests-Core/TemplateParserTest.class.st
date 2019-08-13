@@ -1,5 +1,5 @@
 "
-SUnit test for resolveTemplate
+SUnit test for resolveTemplate (indirectly for TemplateParser)
 "
 Class {
 	#name : #TemplateParserTest,
