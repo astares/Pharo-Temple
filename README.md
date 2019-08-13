@@ -25,8 +25,9 @@ When installed you can send the message #resolveTemplate to a String. The String
 ```
 { yourexpression }
 ```
+The expressions are evaluated to get included into the output.
 
-So curly braces are used as markers and are therefore predefined within templates. If you need them nonetheless within your **template text** you can escape them using \{ and \} easily. 
+As curly braces are used as markers their use is predefined within templates. If you need them nonetheless within your **template text** you can escape them using \{ and \} easily. 
 
 # Examples
 ## Templates with Pharo expressions
