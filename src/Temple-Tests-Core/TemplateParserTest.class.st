@@ -2,13 +2,21 @@
 SUnit test for resolveTemplate
 "
 Class {
-	#name : #ResolveTemplateTest,
+	#name : #TemplateParserTest,
 	#superclass : #TestCase,
 	#category : #'Temple-Tests-Core-Base'
 }
 
+{ #category : #'tests - escaping' }
+TemplateParserTest >> testBothEscaping [
+
+	self assert: 'Something \{\} More' resolveTemplate equals: 'Something {} More'
+
+ 
+]
+
 { #category : #testing }
-ResolveTemplateTest >> testExpressionToString [
+TemplateParserTest >> testExpressionToString [
 
 	self assert: 'An expression: { Object name }' resolveTemplate equals: 'An expression: Object'
 
@@ -16,15 +24,23 @@ ResolveTemplateTest >> testExpressionToString [
 ]
 
 { #category : #testing }
-ResolveTemplateTest >> testInteger [
+TemplateParserTest >> testInteger [
 
 	self assert: 'An integer: { 1 }' resolveTemplate equals: 'An integer: 1'
 
  
 ]
 
+{ #category : #'tests - escaping' }
+TemplateParserTest >> testSimpleEscaping [
+
+	self assert: 'Something \{ More' resolveTemplate equals: 'Something { More'
+
+ 
+]
+
 { #category : #testing }
-ResolveTemplateTest >> testString [
+TemplateParserTest >> testString [
 
 	self assert: 'A string: { ''HelloWorld'' }' resolveTemplate equals: 'A string: HelloWorld'
 
@@ -32,7 +48,7 @@ ResolveTemplateTest >> testString [
 ]
 
 { #category : #testing }
-ResolveTemplateTest >> testSymbol [
+TemplateParserTest >> testSymbol [
 
 	self assert: 'A symbol: { #HelloWorld }' resolveTemplate equals: 'A symbol: HelloWorld'
 
