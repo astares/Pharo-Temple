@@ -2,7 +2,7 @@
 Parser for templates
 "
 Class {
-	#name : #TempleParser,
+	#name : #TemplateParser,
 	#superclass : #Object,
 	#instVars : [
 		'stream'
@@ -11,7 +11,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-TempleParser class >> on: aStringOrStream [ 
+TemplateParser class >> on: aStringOrStream [ 
 
 	^(self new)
 		stream: aStringOrStream readStream;
@@ -19,7 +19,7 @@ TempleParser class >> on: aStringOrStream [
 ]
 
 { #category : #parsing }
-TempleParser >> parse [
+TemplateParser >> parse [
 	| result |
 	result := String new writeStream.
 	[ stream atEnd ]
@@ -40,6 +40,6 @@ TempleParser >> parse [
 ]
 
 { #category : #accessing }
-TempleParser >> stream: aReadStream [ 
+TemplateParser >> stream: aReadStream [ 
 	stream := aReadStream
 ]
