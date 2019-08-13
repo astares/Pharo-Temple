@@ -20,12 +20,23 @@ Metacello new
 
 # Usage
 
-When installed you can send the message #resolveTemplate to a String. The String can contain Pharo expressions surrounded by curly braces 
+When installed you can send the message #resolveTemplate to a String to get the output of your string template.
+
+```Smalltalk
+'Hello World' resolveTemplate  
+```
+
+The String can contain Pharo expressions surrounded by curly braces 
 
 ```
 { yourexpression }
 ```
 The expressions are evaluated to get included into the output.
+
+```Smalltalk
+'Hello {#dlroW reverse}' resolveTemplate  
+```
+will also return "Hello World".
 
 As curly braces are used as markers their use is predefined within templates. If you need them nonetheless within your **template text** you can escape them using \{ and \} easily. 
 
