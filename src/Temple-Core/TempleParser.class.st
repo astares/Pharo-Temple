@@ -22,18 +22,21 @@ TempleParser class >> on: aStringOrStream [
 TempleParser >> parse [
 	| result |
 	result := String new writeStream.
-	[ stream atEnd ] whileFalse: [ | currentChar | 
-		(currentChar := stream next) == ${
-			ifTrue: [ | expression | 
+	[ stream atEnd ]
+		whileFalse: [ | currentChar |
+			(currentChar := stream next) == ${
+				ifTrue: [ | expression |
 					expression := stream upTo: $}.
-					result nextPutAll: (Compiler evaluate: expression) asString
-				]
-			ifFalse: [
-					currentChar == $\
-						ifTrue: [ stream atEnd ifFalse: [ result nextPut: stream next ] ]
-						ifFalse: [ result nextPut: currentChar ] ] 	].
-	^result contents				
-				
+					result
+						nextPutAll:
+							(Smalltalk compilerClass new
+								source: expression;
+								evaluate) asString ]
+				ifFalse: [ currentChar == $\
+						ifTrue: [ stream atEnd
+								ifFalse: [ result nextPut: stream next ] ]
+						ifFalse: [ result nextPut: currentChar ] ] ].
+	^ result contents
 ]
 
 { #category : #accessing }
