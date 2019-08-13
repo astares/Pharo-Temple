@@ -24,6 +24,14 @@ TemplateParserTest >> testExpressionToString [
 ]
 
 { #category : #testing }
+TemplateParserTest >> testHTML [
+
+	self assert: '<html><body>{ TemplateParserTest superclass }<body></html>' resolveTemplate equals: '<html><body>TestCase<body></html>'
+
+ 
+]
+
+{ #category : #testing }
 TemplateParserTest >> testInteger [
 
 	self assert: 'An integer: { 1 }' resolveTemplate equals: 'An integer: 1'
