@@ -25,6 +25,7 @@ When installed you can send the message #resolveTemplate to a String to get the 
 ```Smalltalk
 'Hello World' resolveTemplate  
 ```
+returns a 'Hello World' string.
 
 The String can contain Pharo expressions surrounded by curly braces 
 
