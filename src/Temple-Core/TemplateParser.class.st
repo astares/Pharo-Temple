@@ -29,7 +29,7 @@ TemplateParser >> parse [
 					expression := stream upTo: $}.
 					result
 						nextPutAll:
-							(Smalltalk compilerClass new
+							(self class compiler
 								source: expression;
 								evaluate) asString ]
 				ifFalse: [ currentChar == $\

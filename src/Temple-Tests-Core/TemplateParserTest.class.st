@@ -15,6 +15,12 @@ TemplateParserTest >> testBothEscaping [
  
 ]
 
+{ #category : #'tests - escaping' }
+TemplateParserTest >> testEmptyTemplate [
+
+	self assert: '' resolveTemplate equals: ''
+]
+
 { #category : #testing }
 TemplateParserTest >> testExpressionToString [
 
