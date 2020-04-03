@@ -1,5 +1,5 @@
 # Pharo-Temple
-A **minimalistic template engine** for [Pharo](http://www.pharo.org) written and maintained by T. Bergmann (Astares). 
+A **minimalistic template engine** for [Pharo](http://www.pharo.org) written and maintained by astares. 
 
 # Quick Start
 ## Installation via Catalog
