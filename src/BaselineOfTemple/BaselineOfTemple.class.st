@@ -1,5 +1,7 @@
 "
-A baseline for Astares minimalistic Template engine for Pharo
+A baseline for Astares minimalistic Template engine for Pharo 
+
+[https://github.com/astares/Pharo-Temple](https://github.com/astares/Pharo-Temple)
 "
 Class {
 	#name : #BaselineOfTemple,
