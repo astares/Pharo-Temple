@@ -69,4 +69,15 @@ returns **'Ultimative answer: 42'**
 ```
 returns **'Use braces like {} to escape'**
 
+## Templates with predefined bindings
 
+If you already have some objects bound by name you can give them easily in a dictionary: 
+
+```Smalltalk
+| bindings |
+bindings := { #foo -> False superclass. } asDictionary.
+'<b>{ foo }</b>' resolveTemplateUsingBindings: bindings
+
+ "'<b>Boolean</b>'"
+```
+returns **'<b>Boolean</b>'**
