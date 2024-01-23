@@ -7,6 +7,15 @@ Class {
 	#category : #'Temple-Tests-Core-Base'
 }
 
+{ #category : #'tests - bindings' }
+TemplateParserTest >> testBindings [
+
+	| bindings |
+	bindings := { #foo -> 42. } asDictionary.
+
+	self assert: ('<b>{ foo }</b>' resolveTemplateUsingBindings: bindings) equals: '<b>42</b>'
+]
+
 { #category : #'tests - escaping' }
 TemplateParserTest >> testBothEscaping [
 

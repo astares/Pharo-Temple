@@ -5,21 +5,39 @@ Class {
 	#name : #TemplateParser,
 	#superclass : #Object,
 	#instVars : [
-		'stream'
+		'stream',
+		'bindings'
 	],
 	#category : #'Temple-Core-Parsing'
 }
 
 { #category : #'instance creation' }
-TemplateParser class >> on: aStringOrStream [ 
+TemplateParser class >> on: aStringOrStream [
 
-	^(self new)
-		stream: aStringOrStream readStream;
-		yourself 
+	^ self new
+		  stream: aStringOrStream readStream;
+		  yourself
+]
+
+{ #category : #'instance creation' }
+TemplateParser class >> on: aStringOrStream bindings: aDictionary [
+
+	^ self new
+		  stream: aStringOrStream readStream;
+		  bindings: aDictionary;
+		  yourself
+]
+
+{ #category : #accessing }
+TemplateParser >> bindings: aDictionary [
+	"Allows to define additional binding"
+
+	bindings := aDictionary
 ]
 
 { #category : #parsing }
 TemplateParser >> parse [
+
 	| result |
 	result := String new writeStream.
 	[ stream atEnd ]
@@ -31,6 +49,7 @@ TemplateParser >> parse [
 						nextPutAll:
 							(self class compiler
 								source: expression;
+								bindings: bindings;
 								evaluate) asString ]
 				ifFalse: [ currentChar == $\
 						ifTrue: [ stream atEnd
@@ -40,6 +59,7 @@ TemplateParser >> parse [
 ]
 
 { #category : #accessing }
-TemplateParser >> stream: aReadStream [ 
+TemplateParser >> stream: aReadStream [
+
 	stream := aReadStream
 ]
