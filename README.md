@@ -76,8 +76,6 @@ If you already have some objects bound by name you can give them easily in a dic
 ```Smalltalk
 | bindings |
 bindings := { #foo -> False superclass. } asDictionary.
-'<b>{ foo }</b>' resolveTemplateUsingBindings: bindings
-
- "'<b>Boolean</b>'"
+'Superclass of False is { foo }' resolveTemplateUsingBindings: bindings
 ```
-returns **'<b>Boolean</b>'**
+returns **'Superclass of False is Boolean'**
