@@ -2,10 +2,7 @@
 A **minimalistic template engine** for [Pharo](http://www.pharo.org) written and maintained by astares. 
 
 # Quick Start
-## Installation via Catalog
-
-You can install Temple directly from the Pharo catalog.
-
+ 
 ## Installation via Script
 
 ```Smalltalk
