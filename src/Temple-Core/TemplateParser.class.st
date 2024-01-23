@@ -35,6 +35,12 @@ TemplateParser >> bindings: aDictionary [
 	bindings := aDictionary
 ]
 
+{ #category : #initialization }
+TemplateParser >> initialize [
+	super initialize.
+	bindings := Dictionary new
+]
+
 { #category : #parsing }
 TemplateParser >> parse [
 
