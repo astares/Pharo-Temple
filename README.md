@@ -79,3 +79,6 @@ bindings := { #foo -> False superclass. } asDictionary.
 'Superclass of False is { foo }' resolveTemplateUsingBindings: bindings
 ```
 returns **'Superclass of False is Boolean'**
+
+## Screenshot
+![Pharo Temple](doc/images/screenshot.png "Screenshot")
